@@ -11,7 +11,7 @@ export class TransferenciaService {
         this.listaTransferencia = [];
     }
 
-    get transferencias() {
+    get transferencias(): any[] {
         return this.listaTransferencia;
     }
 
