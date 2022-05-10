@@ -20,8 +20,11 @@ export class NovaTransferenciaComponent {
     transferir() {
         console.log('Transferindo...');
         // this.aoTransferir.emit({ valor: this.valor, destino: this.destino });
-        this.service.adicionar({ valor: this.valor, destino: this.destino });
-        this.limparCampos();
+        this.service.adicionar({ valor: this.valor, destino: this.destino })
+            .subscribe(resultado => {
+                console.log(resultado);
+                this.limparCampos();
+            }, error => console.log(error));
     }
 
     limparCampos() {
